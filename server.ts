@@ -53,18 +53,14 @@ async function bootstrap() {
   ].filter(Boolean) as string[];
 
   app.use(cors({
-    origin: (origin, callback) => {
-      // In development or non-production environment, allow requests with no origin (like mobile apps, curl, postman)
-      if (!origin || allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV !== 'production') {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-  }));
+  origin: [
+    'http://localhost:3000',
+    'https://taskcom-ten.vercel.app'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
   // Basic Parser Middlewares
   app.use(express.json());
