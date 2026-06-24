@@ -1,0 +1,6 @@
+{
+  "name": "Taskcom",
+  "description": "An enterprise-grade Ticket Management System for tracking tasks, assigning roles, and collaborating across teams.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
