@@ -1,6 +1,8 @@
 import { User, Ticket, Comment, Notification, TicketActivity } from './types.ts';
 
-const API_BASE = '/api';
+const API_BASE =
+  (import.meta as any).env.VITE_API_URL ||
+  'https://taskcom-production.up.railway.app/api';
 
 function getHeaders(): HeadersInit {
   const token = localStorage.getItem('token');
