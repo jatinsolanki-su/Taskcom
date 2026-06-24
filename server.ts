@@ -24,7 +24,7 @@ import { centralErrorHandler } from './server/middleware/security.ts';
 
 async function bootstrap() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
   // Initialize DB pool or fallback file database
   await initDatabase();
